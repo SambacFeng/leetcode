@@ -40,3 +40,15 @@ let reverseHead = function(head, n) {
     通过迭代链表并递减N，在basecase处记录反转前最后一个节点(新头节点)的下一个节点，再对前N项执行反转整个链表，将原头节点的next节点设置为之前记录的节点(而不是null)
     再通过迭代递减left直至left为1，将反转left和right之间的节点转换为反转前N个节点(因为此时left为1)
 */
+
+// 递归解法
+let reverseHead = (head, right) => {
+    let prev, cur = head
+    while (cur !== right) {
+        const nxt = cur.next
+        cur.next = prev
+        prev = cur
+        cur = nxt
+    }
+    return prev
+}
