@@ -28,8 +28,14 @@ let build = (preorder, preLeft, preRight, inorder, inLeft, inRight) => {
         let root = new TreeNode(val)
         let leftSize = index - inLeft
         root.left = build(preorder, preLeft + 1, preLeft + leftSize, inorder, inLeft, index - 1)
-        root.right = build(preorder, preorder + leftSize + 1, preRight, inorder, index + 1, inRight)
+        root.right = build(preorder, preLeft + leftSize + 1, preRight, inorder, index + 1, inRight)
         return root
     }
     return null
 }
+
+/* 
+    2021/8/10
+    98% 98%
+    重点在于确定参数范围
+*/
