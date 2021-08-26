@@ -42,4 +42,15 @@ console.log(rob([2,7,9,3,1]));
     }
     return dp[0]
     dp数组每个值的状态取决于其前两个值的大小
+
+    对于每个dp位置，其值只和自身及其前方两个值的大小有关，可以进行状态压缩
+    67 74
+    let n = nums.length
+    let curr = next1 = next2 = 0
+    for (let i = n - 1; i >= 0; i--) {
+        curr = Math.max(nums[i] + next2, next1)
+        next2 = next1
+        next1 = curr
+    }
+    return curr
 */
