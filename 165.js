@@ -33,6 +33,26 @@ console.log(res)
     2021/7/22
     双指针
     可直接split，不让用split可实现简单的split
+
+    2021/9/1 追加
+    会用map了，写了个简单点好理解的版本
+    let v1 = version1.split('.').map(x => Number(x))
+    let v2 = version2.split('.').map(x => Number(x))
+    let len = Math.max(v1.length, v2.length)
+    while (v1.length < len) {
+        v1.push(0)
+    }
+    while (v2.length < len) {
+        v2.push(0)
+    }
+    for (let i = 0; i < len; i++) {
+        if (v1[i] > v2[i]) {
+            return 1
+        } else if (v1[i] < v2[i]) {
+            return -1
+        }
+    }
+    return 0
 */
 
 
