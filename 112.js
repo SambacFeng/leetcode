@@ -19,11 +19,6 @@ var hasPathSum = function (root, targetSum) {
         } else {
             return dfs(root.left, target - root.val) || dfs(root.right, target - root.val)
         }
-/*         let res = []
-        res.push(root.val)
-        if (root.left) res.push(...dfs(root.left).map(x => x + root.val))
-        if (root.right) res.push(...dfs(root.right).map(x => x + root.val))
-        return res */
     }
     return dfs(root, targetSum)
 }
