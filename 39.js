@@ -6,7 +6,7 @@
 var combinationSum = function (candidates, target) {
     let res = []
     let track = []
-    candidates.sort((a, b) => a - b)
+    // candidates.sort((a, b) => a - b)
 
     const bt = (target, start) => {
         if (target < 0 || start > candidates.length) return
@@ -31,6 +31,8 @@ var combinationSum = function (candidates, target) {
     94 90
     通过排序将问题转换为易解的回溯问题
     排序复杂度(NlogN)小于暴力回溯复杂度(N!)，所以可以使用排序
+    2021/10/29
+    发现不排序好像也可以。。完全不耽误，只要进入下一层的时候不把start + 1就可以重复使用一个数字了
 */
 
 /*     let res = new Map()
